@@ -1,0 +1,5 @@
+﻿  moc TaskApp.h
+  TaskApp.cpp
+  main.cpp
+  moc_TaskApp.cpp
+  TaskApp.vcxproj -> C:\Users\ajipp\Desktop\TaskApp\x64\Debug\TaskApp.exe
