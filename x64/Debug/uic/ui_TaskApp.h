@@ -44,16 +44,30 @@ public:
     QFrame *AddRight;
     QVBoxLayout *verticalLayout_5;
     QPushButton *AddNewButton;
+    QFrame *NumberTask;
+    QHBoxLayout *horizontalLayout_3;
+    QSpacerItem *horizontalSpacer_3;
+    QLabel *NumberTaskLabel;
+    QSpacerItem *horizontalSpacer_4;
     QScrollArea *AllNewTasks;
     QWidget *AllNewTasksContents;
     QVBoxLayout *verticalLayout_4;
     QSpacerItem *verticalSpacer;
+    QFrame *NumberDone;
+    QHBoxLayout *horizontalLayout_4;
+    QSpacerItem *horizontalSpacer_5;
+    QLabel *NumberDoneLabel;
+    QSpacerItem *horizontalSpacer_6;
+    QScrollArea *AllFinishedTasks;
+    QWidget *AllFinishedTasksContents;
+    QVBoxLayout *verticalLayout_6;
+    QSpacerItem *verticalSpacer_2;
 
     void setupUi(QWidget *TaskAppClass)
     {
         if (TaskAppClass->objectName().isEmpty())
             TaskAppClass->setObjectName(QString::fromUtf8("TaskAppClass"));
-        TaskAppClass->resize(249, 325);
+        TaskAppClass->resize(498, 398);
         verticalLayout = new QVBoxLayout(TaskAppClass);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
@@ -143,12 +157,36 @@ public:
 
         verticalLayout_2->addWidget(AddToDoList);
 
+        NumberTask = new QFrame(ContentFrame);
+        NumberTask->setObjectName(QString::fromUtf8("NumberTask"));
+        NumberTask->setFrameShape(QFrame::StyledPanel);
+        NumberTask->setFrameShadow(QFrame::Raised);
+        horizontalLayout_3 = new QHBoxLayout(NumberTask);
+        horizontalLayout_3->setSpacing(6);
+        horizontalLayout_3->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        horizontalSpacer_3 = new QSpacerItem(190, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_3);
+
+        NumberTaskLabel = new QLabel(NumberTask);
+        NumberTaskLabel->setObjectName(QString::fromUtf8("NumberTaskLabel"));
+
+        horizontalLayout_3->addWidget(NumberTaskLabel);
+
+        horizontalSpacer_4 = new QSpacerItem(190, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_4);
+
+
+        verticalLayout_2->addWidget(NumberTask);
+
         AllNewTasks = new QScrollArea(ContentFrame);
         AllNewTasks->setObjectName(QString::fromUtf8("AllNewTasks"));
         AllNewTasks->setWidgetResizable(true);
         AllNewTasksContents = new QWidget();
         AllNewTasksContents->setObjectName(QString::fromUtf8("AllNewTasksContents"));
-        AllNewTasksContents->setGeometry(QRect(0, 0, 209, 134));
+        AllNewTasksContents->setGeometry(QRect(0, 0, 458, 60));
         verticalLayout_4 = new QVBoxLayout(AllNewTasksContents);
         verticalLayout_4->setSpacing(6);
         verticalLayout_4->setContentsMargins(11, 11, 11, 11);
@@ -160,6 +198,48 @@ public:
         AllNewTasks->setWidget(AllNewTasksContents);
 
         verticalLayout_2->addWidget(AllNewTasks);
+
+        NumberDone = new QFrame(ContentFrame);
+        NumberDone->setObjectName(QString::fromUtf8("NumberDone"));
+        NumberDone->setFrameShape(QFrame::StyledPanel);
+        NumberDone->setFrameShadow(QFrame::Raised);
+        horizontalLayout_4 = new QHBoxLayout(NumberDone);
+        horizontalLayout_4->setSpacing(6);
+        horizontalLayout_4->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+        horizontalSpacer_5 = new QSpacerItem(191, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_4->addItem(horizontalSpacer_5);
+
+        NumberDoneLabel = new QLabel(NumberDone);
+        NumberDoneLabel->setObjectName(QString::fromUtf8("NumberDoneLabel"));
+
+        horizontalLayout_4->addWidget(NumberDoneLabel);
+
+        horizontalSpacer_6 = new QSpacerItem(190, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_4->addItem(horizontalSpacer_6);
+
+
+        verticalLayout_2->addWidget(NumberDone);
+
+        AllFinishedTasks = new QScrollArea(ContentFrame);
+        AllFinishedTasks->setObjectName(QString::fromUtf8("AllFinishedTasks"));
+        AllFinishedTasks->setWidgetResizable(true);
+        AllFinishedTasksContents = new QWidget();
+        AllFinishedTasksContents->setObjectName(QString::fromUtf8("AllFinishedTasksContents"));
+        AllFinishedTasksContents->setGeometry(QRect(0, 0, 458, 60));
+        verticalLayout_6 = new QVBoxLayout(AllFinishedTasksContents);
+        verticalLayout_6->setSpacing(6);
+        verticalLayout_6->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
+        verticalSpacer_2 = new QSpacerItem(20, 39, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_6->addItem(verticalSpacer_2);
+
+        AllFinishedTasks->setWidget(AllFinishedTasksContents);
+
+        verticalLayout_2->addWidget(AllFinishedTasks);
 
 
         verticalLayout->addWidget(ContentFrame);
@@ -178,6 +258,8 @@ public:
         NewTaskLineEdit->setPlaceholderText(QCoreApplication::translate("TaskAppClass", "Today, I need to...", nullptr));
         NewDateText->setText(QCoreApplication::translate("TaskAppClass", "Date Created", nullptr));
         AddNewButton->setText(QCoreApplication::translate("TaskAppClass", "Add", nullptr));
+        NumberTaskLabel->setText(QCoreApplication::translate("TaskAppClass", "To-Do #", nullptr));
+        NumberDoneLabel->setText(QCoreApplication::translate("TaskAppClass", "Done  #", nullptr));
     } // retranslateUi
 
 };

@@ -34,6 +34,12 @@
         background-color: #103549;
     }
 
+    #TaskAppClass #AllFinihedTasks,
+    #TaskAppClass #AllFinishedTasksContents {
+        border: none;
+        background-color: #103549;
+    }
+
     #TaskAppClass QPushButton {
         width: 80px;
         height: 80px;
